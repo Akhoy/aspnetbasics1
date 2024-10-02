@@ -1,0 +1,44 @@
+@LiL.TimeTracking_HostAddress = https://localhost:7062
+@AccessToken=CfDJ8Ms904D11wxCqabj-WqirE-QUujWYuMukquesQDATJ0ylLUbzsg2suflahTnkqL2oR-WcTzmmnBu5077yRdixh0lzviqrUTPsBjPyMgYO-gcTaqyXscx73GK-015VZWKnjYOaEezhB2esPtm05zP796zT3uSESLFgJJCGcQyxeNulptA_jrULXCMKQH4BaCg1YcfT-HoruwyRt6NlaaBglFkSDqL_kUGOAqv69kLiru8Qh8bylRVKwfDwbHNd7jkO6qMCaMvUo4zsldd3KDBPSjxCsl95Qs49ZgaMwXX-mU_PydGqQ2MNQ90_JbGIAtdfpTQRLuG6ydt0KnFzLLAw1xKghRdRdJr5vV7GfTVGtz6XPODtcl4umweaH0Lekb5cdKHjdLbHzbjtDslML08Tkha2bSnpOmisy0LOlcplmCQ-p0o8pYo5YQooE5mg6AAjBRasSMltzb2ld8k8E3CYoXXxfwst6vLe2eHWMdJDAFyReb1LDRD_Z4ZwTKfHtHKnIt_qGrxBaRNph1bqLu071wzIl0o9QMRecUnaLk7oqs5Kfv9inRQ1mfjECeds4ulcp-oRaV06E2dSrKjmX_j8CiWWwh_NmvzW9FwHKIZxM8gyfG2Sf1U05alk6hJmVs-k_EdaXvTbiBDfisXW2V2Wn8xTLszodM98-sYJVP7ShlINdqph6v-ZZTDYT-DE1oKCMW1qgtbR-LKjvbyx6yc0rY
+
+POST {{LiL.TimeTracking_HostAddress}}/identity/register
+Content-Type: application/json
+
+{
+    "email":"aks@hplusport.com",
+    "password":"Pass@word1"
+}
+###
+POST {{LiL.TimeTracking_HostAddress}}/identity/login
+Content-Type: application/json
+
+{
+    "email":"aks@hplusport.com",
+    "password":"Pass@word1"
+}
+###
+GET {{LiL.TimeTracking_HostAddress}}/api/Employee
+Accept: application/json
+Authorization: Bearer {{AccessToken}}
+###
+GET {{LiL.TimeTracking_HostAddress}}/api/Project
+Accept: application/json
+###
+
+POST {{LiL.TimeTracking_HostAddress}}/identity/register
+Content-Type: application/json
+
+{
+    "email":"aks@trainingxyz.com",
+    "password":"Pass@word1"
+}
+###
+
+POST {{LiL.TimeTracking_HostAddress}}/identity/login
+Content-Type: application/json
+
+{
+    "email":"aks@trainingxyz.com",
+    "password":"Pass@word1"
+}
+###

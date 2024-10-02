@@ -1,5 +1,6 @@
 using LiL.TimeTracking.Models;
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,8 @@ namespace LiL.TimeTracking.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //since authorize is in controller level now, all operations require authentication. not only do you need to authenticate the user but you also need to apply this particular policy made up of requirements to validate the user.
+    [Authorize(policy:"EmailDomain")]
     public class EmployeeController : ControllerBase
     {
         private TimeTrackingDbContext ctx;

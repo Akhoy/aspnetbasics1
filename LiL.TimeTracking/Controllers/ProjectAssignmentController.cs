@@ -4,6 +4,7 @@ using LiL.TimeTracking.Models;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
 using LiL.TimeTracking.Resources;
+using Microsoft.AspNetCore.Authorization;
 
 namespace LiL.TimeTracking.Controllers
 {
@@ -67,6 +68,7 @@ namespace LiL.TimeTracking.Controllers
 
         // DELETE api/<ProjectAssignmentController>/5
         [HttpDelete("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType<Resources.ProjectAssignment>(StatusCodes.Status204NoContent)]
         [ProducesResponseType<ObjectResult>(StatusCodes.Status500InternalServerError)]
